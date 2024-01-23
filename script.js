@@ -7,7 +7,7 @@ function getMonthName(date) {
 }
 
 function getTime(date) {
-    return new Date(new Date().setHours(11)).toLocaleString(undefined, { hour: 'numeric' } );
+    return date.toLocaleString(undefined, { hour: 'numeric' } );
 }
 
 function nthNumber(number) {
@@ -24,6 +24,26 @@ function nthNumber(number) {
     }
 }
 
+function get12TimeFormat(time) {
+  if (time < 12) {
+    return `${time}AM`;
+  }
+  switch(time) {
+    case 12:
+      return "12PM";
+    case 13:
+      return "1PM";
+    case 14:
+      return "2PM";
+    case 15:
+      return "3PM";
+    case 16:
+      return "4PM";
+    case 17:
+      return "5PM";
+  }
+}
+
 var d = new Date();
 var strDate = d.getDate();
 var formattedDate = `${getDayName(d)}, ${getMonthName(d)} ${strDate}${nthNumber(strDate)}`;
@@ -32,11 +52,13 @@ $("#currentDay").append(formattedDate);
 var blockEl = $(".container");
 const workingHours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
+
 for (let i = 0; i < workingHours.length; i++) {
+
   let currentTime = getTime(d);
   let inputEl;
   const rowEl = $(`<div class="row">`);
-  const hourEl = $(`<div class="col col-1 hour">${workingHours[i]}</div>`);
+  const hourEl = $(`<div class="col col-1 hour">${get12TimeFormat(workingHours[i])}</div>`);
   let btnEl = $(`<button id="${i}" class="col col-1 saveBtn">SAVE</button>`);
   let storedEvent = localStorage.getItem(`event${i}`) || "";
 
