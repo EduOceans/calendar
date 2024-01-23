@@ -22,6 +22,7 @@ To run the website locally, follow these steps:
 
 ## Usage
 You can have a look at the website [here](https://eduoceans.github.io/working-calendar/)
+![Screenshot ](https://github.com/EduOceans/calendar/assets/150608334/abbf0bef-3218-4f99-bc41-bd3621ca318f)
 
 
 ## License
