@@ -1,4 +1,4 @@
-# working-calendar
+# Working Calendar
 ![EduOceans](https://img.shields.io/badge/Edu-Oceans-blue)
 
 Welcome to the Calendar Project! This project is a simple yet powerful calendar application designed to help you manage your schedule, events, and important dates. 
